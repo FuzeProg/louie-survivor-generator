@@ -69,14 +69,14 @@ electricity.consumtion.now = (client) => {
 
 	electricityValue.consumtion.now = tools.randomUpAndDown(0.01, electricityValue.consumtion.now);
 
-	client.publish('electricity/consomation/now', JSON.stringify(electricityValue.consumtion.now));
+	client.publish('electricity/consumtion/now', JSON.stringify({value: electricityValue.consumtion.now}));
 };
 
 electricity.consumtion.day = (client) => {
 
 	electricityValue.consumtion.day = tools.randomUpAndDown(0.01, electricityValue.consumtion.day);
 
-	client.publish('electricity/consomation/day', JSON.stringify({
+	client.publish('electricity/consumtion/day', JSON.stringify({
 		value: electricityValue.consumtion.day
 	}));
 };
