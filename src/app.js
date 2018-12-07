@@ -10,8 +10,10 @@ const mqtt = require('mqtt');
 const HOST = 'localhost';
 const client = mqtt.connect('mqtt://' + HOST, {port: 1883});
 
-const electricity = require('./generators/electricity');
-const food = require('./generators/food');
+const electricity = require('./generators/electricity'),
+	food = require('./generators/food'),
+	world = require('./generators/world'),
+	expedition = require('./generators/expedition');
 let start = true;
 
 
@@ -34,7 +36,18 @@ function generatorLoop(){
 	food.water.stock.now(client);
 	food.food.consumtion.day(client);
 	food.food.production.day(client);
-	electricity.sun.production.now(client);
+	food.food.stock.now(client);
+
+	world.temperature.now(client);
+	world.temperature.interval.min(client);
+	world.temperature.interval.max(client);
+
+	expedition.bpm.now(client);
+	expedition.feed.now(client);
+	expedition.geoposition.distance(client);
+	expedition.geoposition.time(client);
+	expedition.geoposition.long(client);
+	expedition.geoposition.lat(client);
 }
 
 client.on('connect', function () {
