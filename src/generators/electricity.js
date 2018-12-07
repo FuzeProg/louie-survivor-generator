@@ -110,21 +110,21 @@ electricity.wind.production.now = (client) => {
 
 	electricityValue.wind.production.now = tools.randomUpAndDown(0.01, electricityValue.wind.production.now);
 
-	client.publish('electricity/wind/production/now', JSON.stringify(0.01, electricityValue.wind.production.now))
+	client.publish('electricity/wind/production/now', JSON.stringify({value: electricityValue.wind.production.now}))
 };
 
 electricity.wind.speed = (client) => {
 
 	electricityValue.wind.speed = tools.randomUpAndDown(0.01, electricityValue.wind.speed);
 
-	client.publish('electricity/wind/speed', JSON.stringify(electricityValue.wind.speed))
+	client.publish('electricity/wind/speed', JSON.stringify({value: electricityValue.wind.speed}))
 };
 
 electricity.sun.state = (client) => {
 
 	electricityValue.sun.state = tools.randomUpAndDown(0.01, electricityValue.sun.state);
 
-	client.publish('electricity/sun/state', JSON.stringify(electricityValue.sun.state))
+	client.publish('electricity/sun/state', JSON.stringify({ value: electricityValue.sun.state}))
 };
 
 electricity.sun.production.day = (client) => {
@@ -140,8 +140,8 @@ electricity.sun.production.now = (client) => {
 
 	electricityValue.sun.production.now = tools.randomUpAndDown(0.01, electricityValue.sun.production.now);
 
-	client.publish('electricity/sun/production/now', JSON.stringify(electricityValue.sun.production.now))
+	client.publish('electricity/sun/production/now', JSON.stringify({value: electricityValue.sun.production.now}))
 
 };
 
-exports.electricity = electricity;
+module.exports = electricity;

@@ -60,7 +60,7 @@ food.water.stock.now = (client) => {
 
     foodValues.water.stock.now = tools.randomUpAndDown(0.01, foodValues.water.stock.now);
 
-    client.publish('food/water/stock/now', JSON.stringify(foodValues.water.stock.now))
+    client.publish('food/water/stock/now', JSON.stringify({ value: foodValues.water.stock.now}))
 };
 
 food.food.consumtion.day = (client) => {
@@ -85,7 +85,7 @@ food.food.stock.now = (client) => {
 
     foodValues.food.stock.now = tools.randomUpAndDown(0.01, foodValues.food.stock.now);
 
-    client.publish('food/food/stock/now', JSON.stringify(foodValues.food.stock.now))
+    client.publish('food/food/stock/now', JSON.stringify({value: foodValues.food.stock.now}))
 };
 
-exports.food = food;
+module.exports = food;
