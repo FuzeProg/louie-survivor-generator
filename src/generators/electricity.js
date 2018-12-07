@@ -37,7 +37,7 @@ const electricityValue = {
 			day: 50000,
 			now: 4300
 		},
-		speed: 15000
+		speed: 15
 	},
 	sun: {
 		state: 87,
