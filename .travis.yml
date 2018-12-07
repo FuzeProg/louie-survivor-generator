@@ -1,0 +1,13 @@
+sudo: enabled
+
+services:
+  - docker
+
+script:
+  - echo $DOCKER_PASSWORD | docker login --username lyoko17220 --password-stdin
+  - docker build -t lyoko17220/louie-survivor-generator .
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker push lyoko17220/louie-survivor-generator;
+    fi

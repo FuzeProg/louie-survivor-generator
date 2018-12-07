@@ -1,0 +1,23 @@
+{
+  "name": "louie-survivor-generator",
+  "version": "1.0.0",
+  "description": "Parce qu'il est toujours à l'écoute, même quand il est mort. Labilisé ANSSI, parce qu'on le vaut bien.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuzeProg/louie-survivor-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FuzeProg/louie-survivor-generator/issues"
+  },
+  "homepage": "https://github.com/FuzeProg/louie-survivor-generator#readme",
+  "dependencies": {
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8"
+  }
+}
